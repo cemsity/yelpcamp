@@ -17,8 +17,9 @@ const commentRoutes     = require("./routes/comments"),
   
 //const seedDB = require('./seed');
 app.use(flash());
-mongoose.connect("mongodb://dbuser:dbpassword1@ds043378.mlab.com:43378/cemsityyelpcamp", { useNewUrlParser: true });
-
+//mongoose.connect("mongodb://dbuser:dbpassword1@ds043378.mlab.com:43378/cemsityyelpcamp", { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+console.log(process.env.DATABASEURL);
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
