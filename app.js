@@ -13,12 +13,12 @@ const express           = require("express"),
   
 const commentRoutes     = require("./routes/comments"),
   campgroundRoutes      = require("./routes/campgrounds"),
-  indexRoutes           = require("./routes/index");
-  
+  indexRoutes           = require("./routes/index"),
+  url                   = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp";
 //const seedDB = require('./seed');
 app.use(flash());
-//mongoose.connect("mongodb://dbuser:dbpassword1@ds043378.mlab.com:43378/cemsityyelpcamp", { useNewUrlParser: true });
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+//
+mongoose.connect(url, { useNewUrlParser: true });
 console.log(process.env.DATABASEURL);
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
