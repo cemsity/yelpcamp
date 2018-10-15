@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yelp Camp</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+</head>
+<body>
+  
+  <% include nav %> 
+  
+  <div class="container">
+    <% if (error && error.length > 0) {%>
+    <div class="alert alert-danger" role='alert'> <%= error %> </div>
+    <% } %>
+    <% if (success && success.length > 0) {%>
+    <div class="alert alert-success" role='alert'> <%= success %> </div>
+    <% } %>
+  </div>
